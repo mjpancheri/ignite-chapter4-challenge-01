@@ -1,5 +1,4 @@
 import { Flex, Image, Text } from '@chakra-ui/react';
-import { RiArrowLeftLine } from 'react-icons/ri';
 import Link from 'next/link';
 
 interface LinkTravelProps {

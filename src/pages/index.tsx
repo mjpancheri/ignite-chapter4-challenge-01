@@ -53,6 +53,7 @@ export default function Home({ slides }: HomeProps) {
             fontWeight="gray.600"
             mx="auto"
             mb="10"
+            align="center"
           >
             Vamos nessa?<br />
             Então escolha o seu continente

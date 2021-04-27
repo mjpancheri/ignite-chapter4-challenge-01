@@ -6,7 +6,6 @@ import { ContinentData } from '../api';
 import { Header } from '../../components/Header';
 import { Info } from '../../components/Info';
 import { City } from '../../components/City';
-import { RiInformationLine } from 'react-icons/ri';
 
 interface ContinentProps {
   continent: ContinentData,
@@ -25,7 +24,10 @@ export default function Continent({ continent }: ContinentProps) {
       >
         <Header showBack />
 
-        <Image src={continent.imgBanner} mx="auto" />
+        <Box w="100%" pb="6" maxWidth={1440} mx="auto" position="relative">
+          <Heading as="h1" size="xl" color="gray.300" left="28" bottom="20" position="absolute">{continent.title}</Heading>
+          <Image src={continent.imgBanner} mx="auto" />
+        </Box>
 
         <Box w="100%" pb="6" maxWidth={1240} mx="auto" px="6">
           <Flex
@@ -52,7 +54,7 @@ export default function Continent({ continent }: ContinentProps) {
               </Text>
               <Info qtd={continent.paises} label="países" />
               <Info qtd={continent.linguas} label="línguas" />
-              <Info qtd={continent.cities.length} label="cidades +100" icon={RiInformationLine} />
+              <Info qtd={continent.cities.length} label="cidades +100" icon />
             </Flex>
           </Flex>
 
