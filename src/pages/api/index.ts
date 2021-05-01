@@ -163,6 +163,12 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
         imgBanner: '/images/europe-banner.png',
         cities: [
           {
+            name: 'Amsterdã',
+            country: 'Holanda',
+            img: '/images/amsterda.png',
+            flag: '/images/flags/holand.svg',
+          },
+          {
             name: 'Londres',
             country: 'Reino Unido',
             img: '/images/londres.png',
@@ -175,22 +181,16 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
             flag: '/images/flags/france.svg',
           },
           {
-            name: 'Roma',
-            country: 'Italia',
-            img: '/images/roma.png',
-            flag: '/images/flags/italy.svg',
-          },
-          {
             name: 'Praga',
             country: 'Republica Tcheca',
             img: '/images/praga.png',
             flag: '/images/flags/czech.svg',
           },
           {
-            name: 'Amsterdã',
-            country: 'Holanda',
-            img: '/images/amsterda.png',
-            flag: '/images/flags/holand.svg',
+            name: 'Roma',
+            country: 'Italia',
+            img: '/images/roma.png',
+            flag: '/images/flags/italy.svg',
           },
         ]
       },

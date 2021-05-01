@@ -1,4 +1,4 @@
-import { Flex, Heading } from '@chakra-ui/react';
+import { Flex, Heading, Text } from '@chakra-ui/react';
 import Link from 'next/link';
 
 export interface SlideProps {
@@ -17,15 +17,19 @@ export function Slide({ id, urlImage, title, subtitle }: SlideProps) {
         direction="column"
         align="center"
         justify="center"
-        bg={`url(${urlImage}) no-repeat`}
-        h={450}
+        backgroundImage={`url(${urlImage})`}
+        backgroundRepeat="no-repeat"
+        backgroundPosition="center center"
+        backgroundSize="cover"
+        h="100%"
+        w="100%"
       >
-        <Heading as="h1" size="xl" color="gray.300" marginBottom="4">
+        <Heading as="h1" fontSize={["lg", "2xl", "5xl"]} color="gray.300" marginBottom={["2", "3", "4"]}>
           {title}
         </Heading>
-        <Heading as="h4" size="md" color="gray.300">
+        <Text fontSize={["0.8rem", "lg", "2xl"]} color="gray.100" fontWeight="bold">
           {subtitle}
-        </Heading>
+        </Text>
       </Flex>
     </Link>
   )

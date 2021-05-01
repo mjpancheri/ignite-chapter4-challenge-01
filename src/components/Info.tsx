@@ -1,5 +1,6 @@
 import { Flex, 
   Heading, 
+  Text,
   Popover,
   PopoverTrigger,
   PopoverContent,
@@ -11,32 +12,32 @@ import { InfoOutlineIcon } from '@chakra-ui/icons';
 interface InfoProps {
   qtd: number;
   label: string;
-  icon?: boolean;
+  cities?: string;
 }
 
-export function Info({ label, qtd, icon = false }: InfoProps) {
+export function Info({ label, qtd, cities = null }: InfoProps) {
   return (
     <Flex
       direction="column"
-      align="center"
+      align={["flex-start", "flex-start", "center"]}
       justify="center"
     >
-      <Heading as="h1" color="yellow.900" fontSize="5xl" fontWeight="semibold">{qtd}</Heading>
-      <Heading as="h3" color="gray.600" fontSize="2xl" lineHeight="3xl" fontWeight="semibold">
+      <Heading as="h1" color="yellow.900" fontSize={["2xl", "3xl", "5xl"]} fontWeight="semibold">{qtd}</Heading>
+      <Text color="gray.600" fontSize={["md", "lg", "xl"]} fontWeight="semibold">
         {label}
-        {icon && (
+        {cities && (
           <Popover>
             <PopoverTrigger>
-              <InfoOutlineIcon ml="3" w="4" h="4" color="gray.600" bg="white" opacity={0.5} cursor="pointer" />
+              <InfoOutlineIcon ml="3" w={["3", "4"]} h={["3", "4"]} color="gray.600" bg="white" opacity={0.5} cursor="pointer" />
             </PopoverTrigger>
-            <PopoverContent color="gray.300" bg="gray.900" borderColor="gray.900" fontSize="sm">
+            <PopoverContent color="gray.300" bg="gray.900" borderColor="gray.900" fontSize={["xs", "sm"]}>
               <PopoverArrow bg="gray.900" borderColor="gray.900" />
               <PopoverCloseButton />
-              <PopoverBody px="5">Ranking das 100 cidades mais visitadas do mundo.</PopoverBody>
+              <PopoverBody px="5">{cities}</PopoverBody>
             </PopoverContent>
           </Popover>
         )}
-      </Heading>
+      </Text>
     </Flex>
   )
 }

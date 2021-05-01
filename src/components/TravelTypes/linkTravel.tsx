@@ -1,4 +1,4 @@
-import { Flex, Image, Text } from '@chakra-ui/react';
+import { Box, Flex, Image, Text, useBreakpointValue } from '@chakra-ui/react';
 import Link from 'next/link';
 
 interface LinkTravelProps {
@@ -9,21 +9,25 @@ interface LinkTravelProps {
 }
 
 export function LinkTravel({ href, src, alt, label }: LinkTravelProps) {
+  const isWideVersion = useBreakpointValue({
+    base: false,
+    lg: true,
+  });
+
   return (
     <Link href={href}>
       <Flex
         as="a"
         href=""
-        direction="column"
-        w="100%"
-        mx="auto"
-        mt="4"
-        px="6"
+        direction={["row", "column"]}
         align="center"
         justify="center"
       >
-        <Image src={src} alt={alt} />
-        <Text marginTop="4">{label}</Text>
+        {isWideVersion 
+          ? <Image src={src} alt={alt} w={85} h={85} mb="4" />
+          : <Box w="1" h="1" borderRadius="50%" background="yellow.900" mr="2"></Box>
+        }
+        <Text fontSize={["sm", "md", "xl"]} fontWeight="600">{label}</Text>
       </Flex>
     </Link>
   )
